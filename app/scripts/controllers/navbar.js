@@ -9,6 +9,7 @@
  */
 angular.module('ubimoDemoApp')
   .controller('NavbarCtrl', function ($scope , $location) {
+
        $scope.isActive= function ( route ){
             return route === this.$location.path();
         }

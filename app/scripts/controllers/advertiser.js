@@ -8,9 +8,10 @@
  * Controller of the ubimoDemoApp
  */
 angular.module('ubimoDemoApp')
-  .controller('AdvertiserCtrl', function ( $scope , advertisersService ) {
-        advertisersService.getAdvertisers().then(function(result) {
+  .controller('AdvertiserCtrl', function ( $scope , advertisersService , $routeParams ) {
+        var advertiserId = $routeParams.advertiserId;
+        advertisersService.getAdvertiser(advertiserId).then(function(result) {
             // TODO - CHECK FOR ERROR
-            $scope.advertisers = result;
+            $scope.advertiser = result;
         });
   });

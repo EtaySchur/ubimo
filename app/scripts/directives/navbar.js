@@ -11,9 +11,7 @@ angular.module('ubimoDemoApp')
     return {
       templateUrl: 'scripts/directives/navbar.html',
       restrict: 'E',
-      controller : 'NavbarCtrl',
-      link: function postLink(scope, element, attrs) {
-        element.text('this is the navbar directive');
-      }
+      controller : 'NavbarCtrl'
+
     };
   });
