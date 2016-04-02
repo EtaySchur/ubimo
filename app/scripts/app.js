@@ -18,24 +18,27 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap',
-    'jlareau.pnotify'
+    'jlareau.pnotify',
+    'ui.grid',
+    'btford.markdown'
+
   ])
-  .config(function ($routeProvider , notificationServiceProvider) {
+  .config(function ($routeProvider , notificationServiceProvider, $uibTooltipProvider , $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/advertisers.html',
         controller: 'AdvertisersCtrl',
-        controllerAs: 'main'
+        controllerAs: 'advertisersCtrl'
       })
       .when('/new', {
         templateUrl: 'views/new-advertiser.html',
         controller: 'AdvertiserCtrl',
-        controllerAs: 'about'
+        controllerAs: 'advertiserCtrl'
       })
         .when('/:advertiserId', {
             templateUrl: 'views/edit-advertiser.html',
             controller: 'AdvertiserCtrl',
-            controllerAs: 'about'
+            controllerAs: 'advertiserCtrl'
         })
       .otherwise({
         redirectTo: '/'
@@ -49,6 +52,13 @@ angular
             closer_hover: true ,
             hide: true
         });
+
+
+
+    $uibTooltipProvider.options({
+      popupDelay: 500,
+      appendToBody: 'body'
+    });
 
 
     });

@@ -1,5 +1,5 @@
-'use strict';
 
+'use strict';
 /**
  * @ngdoc function
  * @name ubimoDemoApp.controller:AdvertisersCtrl
@@ -7,10 +7,40 @@
  * # AdvertisersCtrl
  * Controller of the ubimoDemoApp
  */
-angular.module('ubimoDemoApp')
-  .controller('AdvertisersCtrl', function (  $scope , advertisersService ) {
-        advertisersService.getAdvertisers().then(function(result) {
-            // TODO - CHECK FOR ERROR
-            $scope.advertisers = result;
-        });
-  });
+
+(function () {
+  angular.module('ubimoDemoApp')
+    .controller('AdvertisersCtrl', AdvertisersCtrl);
+
+  function AdvertisersCtrl( $scope , advertisersService, gridTemplates ) {
+    $scope.advertisers = [];
+    $scope.gridOptions = {
+      enableFilter : false ,
+      data: 'advertisers',
+      rowHeight: 50 ,
+      enableHorizontalScrollbar: 1,
+      enableVerticalScrollbar: 1,
+      enableFiltering: false,
+      enableColumnMenus: false,
+      enableRowSelection: false,
+      enableRowHeaderSelection: false,
+      multiSelect: true,
+      modifierKeysToMultiSelect: true,
+      enableSelectAll: false,
+      noUnselect: false,
+      onRegisterApi: function (gridApi) {
+        $scope.gridApi = gridApi;
+      }
+    };
+    $scope.gridOptions.columnDefs = gridTemplates.getAdvertiserColumnTemplate();
+    advertisersService.getAdvertisers().then(function(result) {
+      // TODO - CHECK FOR ERROR
+      $scope.advertisers = result;
+
+    });
+
+
+  }
+
+})();
+

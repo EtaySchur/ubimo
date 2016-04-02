@@ -9,7 +9,7 @@
 angular.module('ubimoDemoApp')
   .directive('navbar', function () {
     return {
-      templateUrl: 'scripts/directives/navbar.html',
+      templateUrl: 'scripts/directives/navbar/navbar.html',
       restrict: 'E',
       controller : 'NavbarCtrl'
 

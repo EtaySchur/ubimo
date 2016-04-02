@@ -10,15 +10,21 @@
                         <p class="help-block" ng-message="required">Advertiser name is required.</p>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="description">* Description</label>
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <label for="description">* Description Editor</label>
                     <textarea  rows="12" name="description"  ng-model="advertiser.description" type="text" class="form-control" id="description" placeholder="Advertiser Description" required> </textarea>
                     <div class="errors-container" ng-if="advertiserForm.description.$touched" ng-messages="advertiserForm.description.$error">
-                        <p class="help-block" ng-message="required">Advertiser description is required.</p>
+                      <p class="help-block" ng-message="required">Advertiser description is required.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="description">Description Preview</label>
+                    <div btf-markdown="advertiser.description"></div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="description">Link</label>
+                    <label for="link">Link</label>
                     <input  name="link" ng-model="advertiser.link" type="url" class="form-control" id="link" placeholder="Advertiser Link">
                     <div class="errors-container" ng-if="advertiserForm.link.$touched" ng-messages="advertiserForm.link.$error">
                         <p class="help-block" ng-message="url">Please insert valid url </p>
