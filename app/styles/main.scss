@@ -12,6 +12,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 body {
   padding: 0;
+  background: #f8f8f8;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -82,7 +83,7 @@ body {
   }
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
+
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
@@ -115,4 +116,23 @@ body {
 .actions-row{
   margin-bottom: 30px;
   margin-top: 30px;
+}
+
+.navbar{
+  margin-bottom: 0;
+}
+.container.main-view-container{
+  //all view port - header heigh
+  //min-height: calc(100vh - 51px);
+  //background-color: white;
+}
+
+.advertisers-wrapper{
+  .ui-grid-cell{
+    display: table;
+    .ui-grid-cell-contents{
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
 }

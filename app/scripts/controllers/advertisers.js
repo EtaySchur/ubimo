@@ -20,7 +20,7 @@
           enableFilter : false ,
           data: 'advertisers',
           rowHeight: 50 ,
-          enableHorizontalScrollbar: 1,
+          enableHorizontalScrollbar: 0,
           enableVerticalScrollbar: 1,
           enableFiltering: false,
           enableColumnMenus: false,

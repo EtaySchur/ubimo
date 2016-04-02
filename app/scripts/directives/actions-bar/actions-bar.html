@@ -1,6 +1,6 @@
 <div class="row actions-row">
   <div class="col-xs-12">
-    <button ng-repeat="button in btnOptions" class="btn btn-{{button.class}}" ng-bind="button.text" ng-click="fireCallbackFunction(button)" ng-disabled="optionalButtonsControlForm.$invalid && button.isDisabled">
+    <button ng-repeat="button in btnOptions" class="btn btn-{{button.class}} margin-right-15" ng-bind="button.text" ng-click="fireCallbackFunction(button)" ng-disabled="optionalButtonsControlForm.$invalid && button.isDisabled">
 
     </button>
   </div>

@@ -32,7 +32,7 @@
       {
         'name': 'id',
         'displayName': '#',
-        'cellTemplate': '<div class="ui-grid-cell-contents" tooltip="{{COL_FIELD}}" ng-bind="COL_FIELD"></div>',
+        'cellTemplate': '<div class="ui-grid-cell-contents center-text" tooltip="{{COL_FIELD}}" ng-bind="COL_FIELD"></div>',
         'width': '40',
         'type' : 'number',
         'resizable': true
@@ -80,8 +80,8 @@
       {
         'field' : 'Edit',
         'displayName' : 'Edit',
-        'cellTemplate': '<div class="ui-grid-cell-contents"><a href="/#/{{row.entity.id}}"> <button class="btn  btn-primary"><span class="fa fa-pencil"></span></button></a> </div>',
-        'width': '60',
+        'cellTemplate': '<div class="ui-grid-cell-contents center-text"><a href="/#/{{row.entity.id}}"> <button class="btn  btn-primary"><span class="fa fa-pencil"></span></button></a> </div>',
+        'width': '50',
         enableSorting: false
       }
     ];
