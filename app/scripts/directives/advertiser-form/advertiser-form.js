@@ -23,6 +23,7 @@
 
   function AdvertiserFormCtrl(scope) {
     $scope = scope;
+    console.log('fuad');
   }
 
 })();
