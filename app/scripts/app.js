@@ -17,9 +17,10 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'jlareau.pnotify'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider , notificationServiceProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/advertisers.html',
@@ -39,4 +40,15 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+
+
+        notificationServiceProvider.setDefaults({
+            history: false,
+            delay: 4000,
+            closer: true,
+            closer_hover: true ,
+            hide: true
+        });
+
+
+    });
