@@ -14,7 +14,8 @@
         restrict: 'E',
         controller: ['$scope', AdvertiserFormCtrl],
         scope: {
-          advertiser: '='
+          advertiser: '=',
+          btnOptions : '='
         }
       };
     });
@@ -23,7 +24,6 @@
 
   function AdvertiserFormCtrl(scope) {
     $scope = scope;
-    console.log('fuad');
   }
 
 })();

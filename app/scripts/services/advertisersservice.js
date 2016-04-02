@@ -34,7 +34,27 @@ angular.module('ubimoDemoApp')
                 return promise;
 
 
-            }
+            },
+          addNewAdvertiser : function( advertiser){
+            promise = $http.post('http://localhost:3000/api/advertiser/' , advertiser).then(function (response) {
+              // The then function here is an opportunity to modify the response
+              console.log(response);
+              // The return value gets picked up by the then in the controller.
+              return response.data;
+            });
+            // Return the promise to the controller
+            return promise;
+          },
+          editAdvertiser : function ( advertiser){
+            promise = $http.put('http://localhost:3000/api/advertiser/'+advertiser.id , advertiser).then(function (response) {
+              // The then function here is an opportunity to modify the response
+              console.log(response);
+              // The return value gets picked up by the then in the controller.
+              return response.data;
+            });
+            // Return the promise to the controller
+            return promise;
+          }
         };
         return advertisersService;
   });

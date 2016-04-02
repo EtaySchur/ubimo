@@ -32,7 +32,7 @@
       {
         'name': 'id',
         'displayName': '#',
-        'cellTemplate': '<div class="ui-grid-cell-contents" tooltip="{{COL_FIELD}}" >{{ COL_FIELD }}</div>',
+        'cellTemplate': '<div class="ui-grid-cell-contents" tooltip="{{COL_FIELD}}" ng-bind="COL_FIELD"></div>',
         'width': '40',
         'type' : 'number',
         'resizable': true
@@ -41,7 +41,7 @@
       {
         'name': 'name',
         'displayName': 'Name',
-        'cellTemplate': '<div class="ui-grid-cell-contents" uib-tooltip="{{COL_FIELD}}" >{{ COL_FIELD }}</div>',
+        'cellTemplate': '<div class="ui-grid-cell-contents" uib-tooltip="{{COL_FIELD}}" ng-bind="COL_FIELD"></div>',
         'width': '*',
         resizable: true
       },
@@ -72,7 +72,7 @@
       {
         'name': 'updatedAt',
         'displayName': 'Updated',
-        'cellTemplate': '<div class="ui-grid-cell-contents" uib-tooltip="{{COL_FIELD  | date  : short}}" ng-bind="(COL_FIELD  | date  : short)"></div>',
+        'cellTemplate': '<div class="ui-grid-cell-contents" uib-tooltip="{{COL_FIELD  | date}}" ng-bind="(COL_FIELD  | date  : short)"></div>',
         'width': '100',
         type: 'date',
         resizable: true
@@ -82,7 +82,7 @@
         'displayName' : 'Edit',
         'cellTemplate': '<div class="ui-grid-cell-contents"><a href="/#/{{row.entity.id}}"> <button class="btn  btn-primary"><span class="fa fa-pencil"></span></button></a> </div>',
         'width': '60',
-        enableSorting: false,
+        enableSorting: false
       }
     ];
   };
