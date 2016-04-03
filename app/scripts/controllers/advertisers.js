@@ -15,6 +15,7 @@
         var advertisers = {
             _init: function () {
                 $scope.advertisers = [];
+                $scope.state = {};
                 $scope.gridOptions = {
                     enableFilter: false,
                     data: 'advertisers',
@@ -29,8 +30,16 @@
                     modifierKeysToMultiSelect: true,
                     enableSelectAll: false,
                     noUnselect: false,
+                    sortInfo: {fields:['name'], directions:['asc']},
                     onRegisterApi: function (gridApi) {
                         $scope.gridApi = gridApi;
+                        $scope.gridApi.core.on.sortChanged( $scope, function(grid, sortColumns){
+                            if(sortColumns.length > 0){
+                                $scope.state = $scope.gridApi.saveState.save();
+                                gridTemplates.setColsState($scope.state);
+                            }
+
+                        });
                     }
                 };
 
@@ -43,6 +52,7 @@
                     }
                 ];
 
+                if(gridTemplates)
                 $scope.gridOptions.columnDefs = gridTemplates.getAdvertiserColumnTemplate();
                 advertisersService.getAdvertisers().then(function (result) {
                     $scope.advertisers = result;
