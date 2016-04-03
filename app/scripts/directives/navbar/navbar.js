@@ -6,12 +6,15 @@
  * @description
  * # navbar
  */
-angular.module('ubimoDemoApp')
-  .directive('navbar', function () {
-    return {
-      templateUrl: 'scripts/directives/navbar/navbar.html',
-      restrict: 'E',
-      controller : 'NavbarCtrl'
+(function(){
+    angular.module('ubimoDemoApp')
+        .directive('navbar', function () {
+            return {
+                templateUrl: 'scripts/directives/navbar/navbar.html',
+                restrict: 'E',
+                controller : 'NavbarCtrl'
 
-    };
-  });
+            };
+        });
+})();
+

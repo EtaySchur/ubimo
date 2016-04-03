@@ -1,12 +1,7 @@
 <div class="navbar navbar-default navbar-static-top">
   <div class="container">
     <div class="navbar-header">
-      <button class="navbar-toggle" type="button" ng-click="nav.isCollapsed = !nav.isCollapsed">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+
       <a href="/#/" class="navbar-brand">Ubimo Demo</a>
     </div>
     <div uib-collapse="nav.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
@@ -17,7 +12,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-          <li  ng-repeat="advertiser in lastAdvertisers" ng-class="{active: nav.isActive('/signup')}"><a href="/#/{{advertiser.id}}"><span ng-bind="advertiser.name"> </span></a></li>
+          <li  ng-repeat="advertiser in lastAdvertisers | limitTo : lastAdvertisersMaxItems" ng-class="{active: nav.isActive('/signup')}"><a href="/#/{{advertiser.id}}"><span ng-bind="advertiser.name"> </span></a></li>
 
       </ul>
         <div class="loading-spiner-holder" data-loading><div class="loading-spiner"><i class="fa fa-circle-o-notch fa-spin"></i></div></div>

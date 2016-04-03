@@ -34,6 +34,7 @@
                     }
                 };
 
+                //
                 $scope.advertiserListActionsBar = [
                     {
                         text: 'Add New Advertiser',
