@@ -64,23 +64,23 @@
       {
         'name': 'createdAt',
         'displayName': 'Created',
-        'cellTemplate': '<div class="ui-grid-cell-contents" uib-tooltip="{{COL_FIELD  | date  : short}}" ng-bind="(COL_FIELD  | date  : short)"></div>',
-        'width': '100',
+        'cellTemplate': '<div class="ui-grid-cell-contents" uib-tooltip="{{COL_FIELD  | date }}" ng-bind="(COL_FIELD  | date  : \'medium\')"></div>',
+        'width': '200',
         type: 'date',
         resizable: true
       },
       {
         'name': 'updatedAt',
         'displayName': 'Updated',
-        'cellTemplate': '<div class="ui-grid-cell-contents" uib-tooltip="{{COL_FIELD  | date}}" ng-bind="(COL_FIELD  | date  : short)"></div>',
-        'width': '100',
+        'cellTemplate': '<div class="ui-grid-cell-contents" uib-tooltip="{{COL_FIELD  | date }}" ng-bind="(COL_FIELD  | date  : \'medium\')"></div>',
+        'width': '200',
         type: 'date',
         resizable: true
       },
       {
         'field' : 'Edit',
         'displayName' : 'Edit',
-        'cellTemplate': '<div class="ui-grid-cell-contents center-text"><a href="/#/{{row.entity.id}}"> <button class="btn  btn-primary"><span class="fa fa-pencil"></span></button></a> </div>',
+        'cellTemplate': '<div class="ui-grid-cell-contents center-text"><a href="/#/{{row.entity.id}}"> <button  uib-tooltip="Edit advertiser" class="btn  btn-primary"><span class="fa fa-pencil"></span></button></a> </div>',
         'width': '50',
         enableSorting: false
       }

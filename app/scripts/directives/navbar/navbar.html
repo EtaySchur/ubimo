@@ -5,12 +5,6 @@
       <a href="/#/" class="navbar-brand">Ubimo Demo</a>
     </div>
     <div uib-collapse="nav.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
-        <!--<li ng-repeat="item in nav.menu" ng-class="{active: nav.isActive(item.link)}">-->
-            <!--<a ng-href="{{item.link}}">{{item.title}}</a>-->
-        <!--</li>-->
-      </ul>
-
       <ul class="nav navbar-nav navbar-right">
           <li  ng-repeat="advertiser in lastAdvertisers | limitTo : lastAdvertisersMaxItems" ng-class="{active: nav.isActive('/signup')}"><a href="/#/{{advertiser.id}}"><span ng-bind="advertiser.name"> </span></a></li>
 
