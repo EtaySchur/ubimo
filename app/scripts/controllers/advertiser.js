@@ -74,6 +74,9 @@
     function saveNewAdvertiser() {
       advertisersService.addNewAdvertiser($scope.advertiser).then(function (result) {
         $location.path('/');
+          notificationService.success("Create New Advertiser Success");
+      }).catch(function(err){
+          notificationService.error("Error Creating New Advertiser\n" + err.data);
       });
     }
 
@@ -81,17 +84,21 @@
       editAdvertiser()
         .then(function(result){
           $location.path('/');
-        });
+        }).catch(function(err){
+
+          });
     }
 
     function editAdvertiser() {
       var deferred = $q.defer();
       advertisersService.editAdvertiser($scope.advertiser)
         .then(function (result) {
+              notificationService.success("Edit Advertiser Success");
               deferred.resolve(result);
-          }
-          , function (error) {
-            deferred.reject(error);
+          }).catch(function(err){
+              console.log(err);
+              notificationService.error("Edit Advertiser Fail\n"+ err.data);
+              deferred.reject(err);
           });
       return deferred.promise;
     }
@@ -99,11 +106,6 @@
     function cancel() {
       $location.path('/');
     }
-
-
-
-
-
   }
 
 

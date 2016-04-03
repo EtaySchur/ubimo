@@ -1,15 +1,11 @@
 <div class="panel panel-info full-height-panel">
   <div class="panel-heading">
-    <h2> New Advertiser
-    <a href="/#/new" class="pull-right">
-      <button type="button" class="btn btn-success btn-md">
-        <span class="glyphicon glyphicon-plus-sign"> </span>
-        Add New Advertiser
-      </button>
-    </a>
+    <h2> Advertisers List
+
     </h2>
   </div>
   <div class="panel-body">
-    <div id="grid1" style="min-height : calc(100vh - 200px);"  ui-grid="gridOptions" ui-grid-auto-resize ui-grid-resize-columns ui-grid-pinning class="grid"></div>
+      <actions-bar  btn-options="advertiserListActionsBar"> </actions-bar>
+      <div id="grid1" style="min-height : calc(100vh - 200px);"  ui-grid="gridOptions" ui-grid-auto-resize ui-grid-resize-columns ui-grid-pinning class="grid"></div>
   </div>
 </div>
