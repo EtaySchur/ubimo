@@ -8,6 +8,7 @@
  * Service in the ubimoDemoApp.
  */
 
+
 angular.module('ubimoDemoApp')
   .service('advertisersService', function ( $http ) {
     var promise = null, advertisersService;
