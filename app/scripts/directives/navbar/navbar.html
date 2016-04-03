@@ -5,8 +5,8 @@
       <a href="/#/" class="navbar-brand">Ubimo Demo</a>
     </div>
     <div uib-collapse="nav.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav navbar-right">
-          <li  ng-repeat="advertiser in lastAdvertisers | limitTo : lastAdvertisersMaxItems" ng-class="{active: nav.isActive('/signup')}"><a href="/#/{{advertiser.id}}"><span ng-bind="advertiser.name"> </span></a></li>
+      <ul class="nav navbar-nav navbar-right last-advertisers-list">
+          <li  ng-repeat="advertiser in lastAdvertisers | limitTo : lastAdvertisersMaxItems" ng-class="{active: nav.isActive('/signup') , 'border-right' : $last}"><a href="/#/{{advertiser.id}}"><span ng-bind="advertiser.name"> </span></a></li>
 
       </ul>
         <div class="loading-spiner-holder" data-loading><div class="loading-spiner"><i class="fa fa-circle-o-notch fa-spin"></i></div></div>

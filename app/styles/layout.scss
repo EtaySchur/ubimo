@@ -3,6 +3,7 @@
 }
 .btn{
   outline: none;
+  border-radius: 0px;
 }
 
 .margin-right-15{
@@ -16,4 +17,11 @@
 .panel.full-height-panel{
   margin: 15px 0;
   min-height: calc(100vh - 81px);
+}
+
+#advertisers-grid{
+  min-height : calc(100vh - 300px);
+  .btn{
+    margin-top: 2px;
+  }
 }
