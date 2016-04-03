@@ -93,6 +93,9 @@ body {
 
 .advertiser-form-wrapper{
     margin-top: 30px;
+    textarea{
+      max-width: 100%;
+    }
 }
 
 .errors-container{
@@ -135,4 +138,10 @@ body {
       vertical-align: middle;
     }
   }
+}
+
+.loading-spiner{
+  padding: 15px;
+  position: absolute;
+  right: 0;
 }

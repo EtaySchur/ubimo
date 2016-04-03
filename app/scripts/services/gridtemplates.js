@@ -31,7 +31,7 @@
     return [
       {
         'name': 'id',
-        'displayName': '#',
+        'displayName': 'ID',
         'cellTemplate': '<div class="ui-grid-cell-contents center-text" tooltip="{{COL_FIELD}}" ng-bind="COL_FIELD"></div>',
         'width': '40',
         'type' : 'number',

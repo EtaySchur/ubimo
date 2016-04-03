@@ -17,10 +17,11 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-          <div class="loading-spiner-holder" data-loading><div class="loading-spiner"><i class="fa fa-circle-o-notch fa-spin"></i></div></div>
-        <!--<li ng-hide="nav.isLoggedIn()" ng-class="{active: nav.isActive('/signup')}"><a href="/signup">Sign up</a></li>-->
-        <!--<li ng-hide="nav.isLoggedIn()" ng-class="{active: nav.isActive('/login')}"><a href="/login">Login</a></li>-->
+          <li  ng-repeat="advertiser in lastAdvertisers" ng-class="{active: nav.isActive('/signup')}"><a href="/#/{{advertiser.id}}"><span ng-bind="advertiser.name"> </span></a></li>
+
       </ul>
+        <div class="loading-spiner-holder" data-loading><div class="loading-spiner"><i class="fa fa-circle-o-notch fa-spin"></i></div></div>
+
     </div>
   </div>
 </div>

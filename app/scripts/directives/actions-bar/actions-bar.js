@@ -24,9 +24,7 @@ angular.module('ubimoDemoApp')
     }
 
     function ActionsBarCtrl ($scope){
-      console.log($scope);
       $scope.fireCallbackFunction = function( button ){
-        console.log(button);
         button.callbackFunc();
       }
     }

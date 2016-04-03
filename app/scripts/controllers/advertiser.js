@@ -13,6 +13,23 @@
   function AdvertiserCtrl( $scope , advertisersService , $routeParams , notificationService , $location , $q ) {
     var advertiserId = $routeParams.advertiserId;
 
+    // Check if advertiser id was passed to controller ( case edit exist advertiser )
+    if(advertiserId){
+        advertisersService.getAdvertiser(advertiserId).then(function (result) {
+            $scope.advertiser = result;
+            $scope.$emit('AddAdvertiserNav', {data: $scope.advertiser});
+        }).catch(function(err){
+            $location.path('/');
+            notificationService.error("Advertiser Not Found");
+
+        });
+    // Case New Advertiser
+    }else{
+        $scope.advertiser = {};
+    }
+
+
+    // New Advertiser Buttons Group Used By Actions Bar Component
     $scope.newAdvertiserActionsBar = [
       {
         text : 'Save New Advertiser',
@@ -28,7 +45,7 @@
       }
     ];
 
-
+    // Edit Advertiser Buttons Group Used By Actions Bar Component
     $scope.editAdvertiserActionsBar = [
       {
         text : 'Save',
@@ -51,19 +68,8 @@
       }
     ];
 
-    advertisersService.getAdvertiser(advertiserId).then(function (result) {
-      // TODO - CHECK FOR ERROR
-      $scope.advertiser = result;
 
-    });
 
-    //$scope.saveNewAdvertiser = function(advertiser){
-    //  advertisersService.addNewAdvertiser(advertiser);
-    //};
-
-    $scope.editAdvertiser = function(advertiser){
-
-    };
 
     function saveNewAdvertiser() {
       advertisersService.addNewAdvertiser($scope.advertiser).then(function (result) {

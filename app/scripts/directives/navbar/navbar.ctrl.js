@@ -9,8 +9,17 @@
  */
 angular.module('ubimoDemoApp')
   .controller('NavbarCtrl', function ($scope , $location) {
+        var lastAdvertisersMaxItems = 3;
+        $scope.lastAdvertisers = [];
+        $scope.$on('AddAdvertiserNav', function(ev, args){
+            var advertiser = args.data;
+            if( $scope.lastAdvertisers.indexOf(advertiser) === -1){
+                $scope.lastAdvertisers.push(advertiser);
+                if($scope.lastAdvertisers.length > lastAdvertisersMaxItems){
+                    $scope.lastAdvertisers.shift();
+                }
+            }
 
-       $scope.isActive= function ( route ){
-            return route === this.$location.path();
-        }
+        });
+
   });
