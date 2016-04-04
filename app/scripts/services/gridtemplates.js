@@ -37,14 +37,6 @@
                             resizable: true
 
                         },
-                        //{
-                        //  'name': 'description',
-                        //  'displayName': 'description',
-                        //  'cellTemplate': '<div class="ui-grid-cell-contents" uib-tooltip="{{COL_FIELD}}" ><div btf-markdown=" row.entity.description"></div></div>',
-                        //  'width': '*',
-                        //  enableSorting: false,
-                        //  resizable: true
-                        //},
                         {
                             'name': 'link',
                             'displayName': 'Link',
