@@ -7,8 +7,11 @@
  * # ubimoApi
  * Constant in the ubimoDemoApp.
  */
-angular.module('ubimoDemoApp')
-  .constant('ubimoApi', {
-        'ADVERTISERS' : 'http://localhost:3000/api/advertisers',
-        'ADVERTISER' : 'http://localhost:3000/api/advertiser/'
-    });
+(function(){
+    angular.module('ubimoDemoApp')
+        .constant('ubimoApi', {
+            'ADVERTISERS' : 'http://localhost:3000/api/advertisers',
+            'ADVERTISER' : 'http://localhost:3000/api/advertiser/'
+        });
+
+})();
