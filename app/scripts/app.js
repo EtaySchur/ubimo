@@ -24,7 +24,7 @@ angular
         'btford.markdown'
 
     ])
-    .config(function ($routeProvider, notificationServiceProvider, $uibTooltipProvider, $locationProvider) {
+    .config(function ($routeProvider, notificationServiceProvider, $uibTooltipProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'views/advertisers.html',

@@ -52,8 +52,9 @@
                     }
                 ];
 
-                if(gridTemplates)
-                $scope.gridOptions.columnDefs = gridTemplates.getAdvertiserColumnTemplate();
+                if(gridTemplates){
+                    $scope.gridOptions.columnDefs = gridTemplates.getAdvertiserColumnTemplate();
+                }
                 advertisersService.getAdvertisers().then(function (result) {
                     $scope.advertisers = result;
                 }).catch(function(err){
